@@ -341,39 +341,29 @@ const sortedEvents = [...filteredEvents].sort(
   selected={selectedDate}
   onSelect={setSelectedDate}
   showOutsideDays={false}
-  className="w-full bg-blue-50 rounded-xl px-6"
+  className="w-full max-w-xl bg-blue-50 rounded-xl px-8 py-6"
+
 
  classNames={{
-  // Base table
-  table: "w-full border-collapse",
+  table: "w-full",
 
-  // ✅ WEEKDAY LABELS (THIS FIXES THE SPLIT TEXT ISSUE)
-  weekdays: "grid grid-cols-7 gap-x-6 mb-2",
-  weekday:
-    "h-11 w-11 flex items-center justify-center text-sm font-semibold text-blue-700",
+  weekdays: "grid grid-cols-[repeat(7,56px)] justify-center mb-4",
+ weekday:
+  "h-14 w-14 flex items-center justify-center text-base font-semibold text-blue-700 tabular-nums leading-none",
 
-  // Weeks wrapper
-  weeks: "space-y-3",
+  weeks: "space-y-4",
+  week: "grid grid-cols-[repeat(7,56px)] justify-center",
 
-  // Each week row
-  week: "grid grid-cols-7 gap-x-6",
+  cell: "h-14 w-14 flex items-center justify-center",
 
-  // Each cell
-  cell: "h-11 w-11 flex items-center justify-center",
+ day:
+  "h-full w-full flex items-center justify-center text-lg rounded-md transition aria-selected:bg-blue-600 aria-selected:text-white aria-disabled:pointer-events-none aria-disabled:bg-transparent",
 
-  // Day button
- day: "h-11 w-11 flex items-center justify-center rounded-md transition hover:bg-indigo-200 aria-selected:bg-blue-600 aria-selected:text-white",
+  day_selected: "!bg-blue-600 !text-white !font-bold hover:bg-blue-600",
+  day_today: "!ring-2 !ring-blue-600 !font-bold hover:bg-indigo-200",
 
-
-
-  day_selected: "!bg-blue-600 !text-white !font-bold",
-  day_today: "!ring-2 !ring-blue-600 !font-bold",
-
-  // Navigation arrows
   nav_button: "hover:bg-indigo-200 text-indigo-700",
 }}
-
-
 />
 
 

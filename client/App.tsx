@@ -1,4 +1,5 @@
 import "./global.css";
+import Layout from "@/components/Layout";
 
 import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
@@ -30,7 +31,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/timetable" element={<Timetable />} />
           <Route path="/academic-calendar" element={<AcademicCalendar />} />
-          <Route path="/hostel" element={<HostelManagement />} />
+          <Route
+  path="/hostel"
+  element={
+    <Layout>
+      <HostelManagement />
+    </Layout>
+  }
+/>
+
           <Route path="/medical" element={<Medical />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/attendance" element={<Attendance />} />

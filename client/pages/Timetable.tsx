@@ -45,7 +45,7 @@ const sampleTimetable: DaySchedule[] = [
     classes: [
       {
         id: "1",
-        subject: "Design and Analysis of Algorithms (CSL 252)",
+        subject: "DESIGN AND ANALYSIS OF ALGORITHMS (CSL 252)",
         time: "11:30 - 12:30",
         room: "Room L-102",
         faculty: "Dr. Vinod Reddy",
@@ -53,7 +53,7 @@ const sampleTimetable: DaySchedule[] = [
       },
       {
         id: "2",
-        subject: "Introduction to Postcolonial Literature (LAL 224)",
+        subject: "INTRODUCTION TO POSTCOLONIAL LITERATURE (LAL 224)",
         time: "12:30 - 1:30",
         room: "L-208",
         faculty: "Ms. Shruti Vinayan",
@@ -61,10 +61,10 @@ const sampleTimetable: DaySchedule[] = [
       },
       {
         id: "3",
-        subject: "Database Management",
-        time: "13:30 - 15:00",
-        room: "Room 205",
-        faculty: "Prof. Aditya Singh",
+        subject: " COMPUTER ORGANIZATION AND ARCHITECTURE (CSL 251) - LAB",
+        time: "15:30 - 17:30",
+        room: "ED1-320",
+        faculty: "Dr. S K Subidh Ali",
         color: "bg-green-100 border-green-300 text-green-900",
       },
     ],
@@ -75,18 +75,18 @@ const sampleTimetable: DaySchedule[] = [
     classes: [
       {
         id: "4",
-        subject: "Algorithms",
-        time: "09:00 - 10:30",
-        room: "Room 103",
-        faculty: "Dr. Vikram Patel",
+        subject: "COMPUTER ORGANIZATION AND ARCHITECTURE (CSL 251)",
+        time: "09:30 - 10:30",
+        room: "L-102",
+        faculty: "Dr. S K Subidh Ali",
         color: "bg-orange-100 border-orange-300 text-orange-900",
       },
       {
         id: "5",
-        subject: "Operating Systems",
-        time: "11:00 - 12:30",
+        subject: " INTRODUCTION TO UNDERSTANDING PSYCHOLOGICAL DISORDERS (LAL 249)",
+        time: "14:30 - 15:30",
         room: "Room 210",
-        faculty: "Dr. Isha Gupta",
+        faculty: " Dr. Eslavath Rajkumar",
         color: "bg-red-100 border-red-300 text-red-900",
       },
     ],
@@ -97,26 +97,26 @@ const sampleTimetable: DaySchedule[] = [
     classes: [
       {
         id: "6",
-        subject: "Object Oriented Programming",
-        time: "09:00 - 10:30",
-        room: "Lab B",
-        faculty: "Mr. Rohan Malhotra",
+        subject: "DESIGN AND ANALYSIS OF ALGORITHMS (CSL 252)",
+        time: "8:30 - 9:30",
+        room: "Room L-102",
+        faculty: "Dr. Vinod Reddy",
         color: "bg-pink-100 border-pink-300 text-pink-900",
       },
       {
         id: "7",
-        subject: "Web Development",
-        time: "10:45 - 12:15",
-        room: "Lab A",
-        faculty: "Ms. Priya Sharma",
+        subject: "THEORY OF COMPUTATION (CSL 253)",
+        time: "11:30 - 12:30",
+        room: "ED1-310",
+        faculty: " Dr. Rishi Ranjan Singh",
         color: "bg-purple-100 border-purple-300 text-purple-900",
       },
       {
         id: "8",
-        subject: "Professional Ethics",
-        time: "14:00 - 15:00",
-        room: "Room 301",
-        faculty: "Dr. Meera Desai",
+        subject: "INTRODUCTION TO POSTCOLONIAL LITERATURE (LAL 224)",
+        time: "12:30 - 1:30",
+        room: "L-208",
+        faculty: "Ms. Shruti Vinayan",
         color: "bg-indigo-100 border-indigo-300 text-indigo-900",
       },
     ],
@@ -127,18 +127,18 @@ const sampleTimetable: DaySchedule[] = [
     classes: [
       {
         id: "9",
-        subject: "Data Structures",
-        time: "09:00 - 10:30",
-        room: "Room 101",
-        faculty: "Dr. Rajesh Kumar",
+         subject: "THEORY OF COMPUTATION (CSL 253)",
+        time: "8:30 - 9:30",
+        room: "ED1-310",
+        faculty: " Dr. Rishi Ranjan Singh",
         color: "bg-blue-100 border-blue-300 text-blue-900",
       },
       {
         id: "10",
-        subject: "Compiler Design",
-        time: "13:30 - 15:00",
-        room: "Room 215",
-        faculty: "Prof. Arjun Verma",
+        subject: "DESIGN AND ANALYSIS OF ALGORITHMS (CSL 252) - TUTORIAL",
+        time: "12:30 - 1:30",
+        room: "Room L-102",
+        faculty: "Dr. Vinod Reddy",
         color: "bg-cyan-100 border-cyan-300 text-cyan-900",
       },
     ],
@@ -149,26 +149,26 @@ const sampleTimetable: DaySchedule[] = [
     classes: [
       {
         id: "11",
-        subject: "Software Engineering",
-        time: "09:00 - 10:30",
-        room: "Room 205",
-        faculty: "Dr. Sanjay Mishra",
+        subject: "COMPUTER ORGANIZATION AND ARCHITECTURE (CSL 251)",
+        time: "10:30 - 11:30",
+        room: "L-102",
+        faculty: "Dr. S K Subidh Ali",
         color: "bg-emerald-100 border-emerald-300 text-emerald-900",
       },
       {
         id: "12",
-        subject: "Database Management",
-        time: "10:45 - 12:15",
-        room: "Lab C",
-        faculty: "Prof. Aditya Singh",
+        subject: "THEORY OF COMPUTATION (CSL 253)",
+        time: "11:30 - 12:30",
+        room: "ED1-310",
+        faculty: " Dr. Rishi Ranjan Singh",
         color: "bg-green-100 border-green-300 text-green-900",
       },
       {
         id: "13",
-        subject: "Project Work",
-        time: "14:00 - 16:00",
-        room: "Room 401",
-        faculty: "Various Faculty",
+        subject: " INTRODUCTION TO FINANCE",
+        time: "12:30 - 13:30",
+        room: "L-209",
+        faculty: "Dr. Rekha Ravindran",
         color: "bg-teal-100 border-teal-300 text-teal-900",
       },
     ],
@@ -208,7 +208,7 @@ export default function Timetable() {
           <div>
             <h1 className="text-4xl font-bold">Timetable</h1>
             <p className="text-muted-foreground mt-2">
-              Your weekly class schedule for Spring 2024
+              Your weekly class schedule for Winter Semester 2025-26
             </p>
           </div>
 

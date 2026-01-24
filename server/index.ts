@@ -1,7 +1,10 @@
 import "dotenv/config";
+import mentalHealthRoute from "./routes/mentalHealth";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+
+
 
 export function createServer() {
   const app = express();
@@ -9,6 +12,8 @@ export function createServer() {
   // Middleware
   app.use(cors());
   app.use(express.json());
+  app.use("/api", mentalHealthRoute);
+
   app.use(express.urlencoded({ extended: true }));
 
   // Example API routes

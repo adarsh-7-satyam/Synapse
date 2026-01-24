@@ -162,18 +162,6 @@ function NavigationContent() {
           </div>
         </div>
       </div>
-
-      {/* User Section */}
-      <div className="border-t p-4 space-y-2">
-        <Button variant="ghost" className="w-full justify-start gap-3">
-          <User size={20} />
-          <span>Profile</span>
-        </Button>
-        <Button variant="ghost" className="w-full justify-start gap-3">
-          <LogOut size={20} />
-          <span>Logout</span>
-        </Button>
-      </div>
     </nav>
   );
 }
@@ -196,8 +184,21 @@ export default function Layout({ children }: LayoutProps) {
             <span className="text-xl font-bold text-foreground">Synapse</span>
           </Link>
 
-          {/* Desktop Navigation Toggle */}
+          {/* Desktop Navigation Toggle and User Actions */}
           <div className="flex items-center gap-4">
+            {/* Profile and Logout Buttons - Hidden on mobile */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <User size={18} />
+                <span>Profile</span>
+              </Button>
+              <Button variant="ghost" size="sm" className="gap-2">
+                <LogOut size={18} />
+                <span>Logout</span>
+              </Button>
+            </div>
+
+            {/* Mobile Navigation Toggle */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
@@ -213,6 +214,17 @@ export default function Layout({ children }: LayoutProps) {
                     <span className="text-xl font-bold">Synapse</span>
                   </Link>
                   <NavigationContent />
+                  {/* Profile and Logout in Mobile Menu */}
+                  <div className="border-t p-4 space-y-2">
+                    <Button variant="ghost" className="w-full justify-start gap-3">
+                      <User size={20} />
+                      <span>Profile</span>
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start gap-3">
+                      <LogOut size={20} />
+                      <span>Logout</span>
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
