@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -301,7 +300,7 @@ const sortedEvents = [...filteredEvents].sort(
 
 
   return (
-    <Layout>
+    <>
       <div className="space-y-8">
         {/* Header */}
         <div>
@@ -499,6 +498,6 @@ const sortedEvents = [...filteredEvents].sort(
           </div>
         </Card>
       </div>
-    </Layout>
+    </>
   );
 }

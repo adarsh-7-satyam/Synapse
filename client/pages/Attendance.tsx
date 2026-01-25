@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { CheckCircle, AlertCircle, TrendingUp, Calendar, Clock, Target, BarChart3 } from "lucide-react";
 import { useState } from "react";
 
@@ -153,7 +152,7 @@ export default function Attendance() {
   const totalCredits = attendanceData.reduce((total, course) => total + course.credits, 0);
 
   return (
-    <Layout>
+    <>
       <div className="space-y-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -285,7 +284,9 @@ export default function Attendance() {
                   </div>
                   <div className="flex items-center gap-2">
                     {getStatusIcon(course.percentage)}
-                    <span className={`text-sm font-semibold ${getStatusColor(course.percentage)}`}>
+                    <span
+  className={`text-sm font-semibold ${getStatusColor(course.percentage)} whitespace-nowrap`}
+>
                       {getStatusText(course.percentage)}
                     </span>
                   </div>
@@ -434,6 +435,6 @@ export default function Attendance() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

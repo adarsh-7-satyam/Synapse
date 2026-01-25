@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -32,16 +31,24 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-// Add this utility function after your imports
+const IIT_BHILAI_ORIGIN =
+  "Indian Institute of Technology Bhilai, IIT Bhilai, 6th Lane Road, Jevra, Chhattisgarh 491002";
+
 const openGoogleMapsDirections = (destination: string) => {
-  // Encode the destination for URL
+  const origin = encodeURIComponent(IIT_BHILAI_ORIGIN);
   const encodedDestination = encodeURIComponent(destination);
-  
-  // Construct Google Maps URL for directions
-  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}&travelmode=driving`;
-  
-  // Open in new tab
-  window.open(mapsUrl, '_blank');
+
+  const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${encodedDestination}&travelmode=driving`;
+
+  window.open(mapsUrl, "_blank");
+};
+
+const openDirectionsFromIIT = (destination: string) => {
+  const origin = encodeURIComponent(IIT_BHILAI_ORIGIN);
+  const dest = encodeURIComponent(destination);
+
+  const url = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${dest}&travelmode=driving`;
+  window.open(url, "_blank");
 };
 
 // Alternative with current location explicitly requested
@@ -260,7 +267,7 @@ const hospitalsData = [
     id: 1, 
     name: "HI-TEK Superspeciality Hospital, Bhilai", 
     distance: 4.6, 
-    travelTime: "11 min", 
+    travelTime: "19 min", 
     specialization: "Multi-specialty, Emergency", 
     helpline: "0788-2233445", 
     availability: "24x7",
@@ -270,7 +277,7 @@ const hospitalsData = [
     id: 2, 
     name: "Sparsh MultiSpecialty Hospital", 
     distance: 6.4, 
-    travelTime: "14 min", 
+    travelTime: "18 min", 
     specialization: "Multi-specialty, Critical Care", 
     helpline: "0788-2233556", 
     availability: "24x7",
@@ -280,7 +287,7 @@ const hospitalsData = [
     id: 3, 
     name: "Dr. B. R. Ambedkar Memorial Hospital", 
     distance: 39.2, 
-    travelTime: "1 hr 3 min", 
+    travelTime: "1 hr 28 min", 
     specialization: "Government, Multi-specialty", 
     helpline: "0771-2445300", 
     availability: "24x7",
@@ -290,7 +297,7 @@ const hospitalsData = [
     id: 4, 
     name: "Narayana Multispeciality Hospital", 
     distance: 45.6, 
-    travelTime: "1 hr 10 min", 
+    travelTime: "1 hr 17 min", 
     specialization: "Cardiology, Neurology", 
     helpline: "0771-3988888", 
     availability: "24x7",
@@ -303,7 +310,7 @@ const medicalStoresData = [
     id: 1, 
     name: "Jan Aushadhi Store", 
     distance: 4.6, 
-    travelTime: "10 min", 
+    travelTime: "15 min", 
     phone: "078229-00777", 
     timings: "08:00 AM–08:00 PM",
     address: "Vivekanand Nagar, Bhilai"
@@ -312,7 +319,7 @@ const medicalStoresData = [
     id: 2, 
     name: "C.G. Medical Stores", 
     distance: 4.6, 
-    travelTime: "10 min", 
+    travelTime: "13 min", 
     phone: "09876543211", 
     timings: "08:00 AM–10:00 PM",
     address: "Smriti Nagar, Bhilai, Durg"
@@ -321,7 +328,7 @@ const medicalStoresData = [
     id: 3, 
     name: "Mahadev Medical Store", 
     distance: 5.0, 
-    travelTime: "11 min", 
+    travelTime: "14 min", 
     phone: "09876543212", 
     timings: "08:00 AM–10:00 PM",
     address: "Shanti Nagar, Smriti Nagar, Durg"
@@ -330,7 +337,7 @@ const medicalStoresData = [
     id: 4, 
     name: "Laxmi Medical Hall", 
     distance: 6.5, 
-    travelTime: "14 min", 
+    travelTime: "17 min", 
     phone: "09876543213", 
     timings: "08:00 AM–10:00 PM",
     address: "Supela, Bhilai, Chhattisgarh "
@@ -1448,34 +1455,44 @@ function MapsTab() {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600">Distance from</p>
-              <p className="font-semibold">Durg Railway Station</p>
-              <p className="text-lg font-bold text-primary">5.4 km</p>
-              <p className="text-xs text-gray-500">(15 min drive)</p>
-            </div>
-            
-            <div className="text-center p-3 bg-gray-50 rounded-lg">
-              <p className="text-sm text-gray-600">Distance from</p>
-              <p className="font-semibold">Raipur Airport</p>
-              <p className="text-lg font-bold text-primary">54 km</p>
-              <p className="text-xs text-gray-500">(1 hr 30 min drive)</p>
-            </div>
+           <div className="text-center p-3 bg-gray-50 rounded-lg">
+  <p className="text-sm text-gray-600">Distance from</p>
+  <p className="font-semibold">Durg Railway Station</p>
+  <p className="text-lg font-bold text-primary">5.4 km</p>
+  <p className="text-xs text-gray-500 mb-3">(19 min drive)</p>
+
+ <Button
+  className="w-full gap-2 mt-3 bg-primary text-white hover:bg-primary/90"
+  onClick={() =>
+    openDirectionsFromIIT("Durg Railway Station, Durg, Chhattisgarh")
+  }
+>
+  <Navigation size={18} />
+  Get Directions
+</Button>
+</div>
+
+<div className="text-center p-3 bg-gray-50 rounded-lg">
+  <p className="text-sm text-gray-600">Distance from</p>
+  <p className="font-semibold">Raipur Airport</p>
+  <p className="text-lg font-bold text-primary">54 km</p>
+  <p className="text-xs text-gray-500 mb-3">(1 hr 27 min drive)</p>
+
+  <Button
+  className="w-full gap-2 mt-3 bg-primary text-white hover:bg-primary/90"
+  onClick={() =>
+    openDirectionsFromIIT("Swami Vivekananda Airport, Raipur, Chhattisgarh")
+  }
+>
+  <Navigation size={18} />
+  Get Directions
+</Button>
+</div>
           </div>
           
-          <Button 
-            className="w-full gap-2 mt-2"
-            asChild
-          >
-            <a 
-              href="https://www.google.com/maps/dir/?api=1&destination=Indian+Institute+of+Technology+Bhilai,6th+Lane+Road,Jevra,Chhattisgarh+491002"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Navigation size={18} />
-              Get Directions to Campus
-            </a>
-          </Button>
+         <div className="flex flex-col gap-3 mt-2">
+  
+</div>
         </div>
       </Card>
 
@@ -1509,7 +1526,7 @@ function MapsTab() {
           <div className="space-y-3 mb-4 text-sm">
             <p><strong>Name:</strong> HI-TEK Superspeciality Hospital, Bhilai</p>
             <p><strong>Distance:</strong> 4.6 km</p>
-            <p><strong>ETA:</strong> 11 minutes by car</p>
+            <p><strong>ETA:</strong> 19 minutes by car</p>
           </div>
           <Button 
             className="w-full gap-2"
@@ -1540,7 +1557,7 @@ export default function Medical() {
     },
   ]);
   return (
-    <Layout>
+    <>
       <div className="space-y-8">
         {/* Header */}
         <div className="flex items-center gap-4">
@@ -1610,7 +1627,7 @@ export default function Medical() {
           </TabsContent>
         </Tabs>
       </div>
-    </Layout>
+    </>
   );
 }
 

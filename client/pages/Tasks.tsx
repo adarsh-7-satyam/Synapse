@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Layout from "@/components/Layout";
 import { 
   PlusCircle, CheckCircle, Clock, AlertCircle, 
   Calendar, Tag, Flag, Trash2, Check,
@@ -37,18 +36,18 @@ export default function Tasks() {
       title: "Prepare for Physics Exam",
       description: "Review thermodynamics and optics chapters",
       category: "exam-prep",
-      deadline: "2023-10-25",
+      deadline: "2026-01-27",
       time: "14:00",
       priority: "high",
       status: "pending",
-      createdAt: "2023-10-10"
+      createdAt: "2026-01-27"
     },
     {
       id: 3,
       title: "Buy Groceries",
       description: "Milk, eggs, bread, fruits, and vegetables",
       category: "personal",
-      deadline: "2023-10-20",
+      deadline: "2026-01-28",
       time: "20:00",
       priority: "medium",
       status: "pending",
@@ -59,7 +58,7 @@ export default function Tasks() {
       title: "Finish History Essay",
       description: "World War II causes and consequences",
       category: "assignment",
-      deadline: "2023-10-12",
+      deadline: "2026-01-12",
       time: "23:59",
       priority: "high",
       status: "finished",
@@ -70,7 +69,7 @@ export default function Tasks() {
       title: "Chemistry Lab Report",
       description: "Acid-base titration experiment results",
       category: "assignment",
-      deadline: "2023-10-14",
+      deadline: "2025-12-28",
       time: "10:00",
       priority: "medium",
       status: "finished",
@@ -81,7 +80,7 @@ export default function Tasks() {
       title: "Create Study Flashcards",
       description: "Biology terms for upcoming test",
       category: "study",
-      deadline: "2023-10-10",
+      deadline: "2026-01-16",
       time: "17:00",
       priority: "low",
       status: "finished",
@@ -92,7 +91,7 @@ export default function Tasks() {
       title: "Group Project Meeting",
       description: "Discuss project progress and next steps",
       category: "other",
-      deadline: "2023-10-13",
+      deadline: "2026-01-19",
       time: "15:30",
       priority: "medium",
       status: "finished",
@@ -103,7 +102,7 @@ export default function Tasks() {
       title: "Update Resume",
       description: "Add recent experience and skills",
       category: "personal",
-      deadline: "2023-10-11",
+      deadline: "2026-01-23",
       time: "12:00",
       priority: "medium",
       status: "finished",
@@ -114,7 +113,7 @@ export default function Tasks() {
       title: "Prepare Presentation Slides",
       description: "Marketing strategy presentation for class",
       category: "assignment",
-      deadline: "2023-10-09",
+      deadline: "2025-12-09",
       time: "09:00",
       priority: "high",
       status: "finished",
@@ -125,7 +124,7 @@ export default function Tasks() {
       title: "Return Library Books",
       description: "3 books are due today",
       category: "personal",
-      deadline: "2023-10-10",
+      deadline: "2026-01-24",
       time: "17:00",
       priority: "low",
       status: "unfinished",
@@ -247,7 +246,7 @@ export default function Tasks() {
   };
 
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 p-4 md:p-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -283,7 +282,7 @@ export default function Tasks() {
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Add Task Form - LEFT SIDE with separate scroll */}
-            <div className={`lg:w-1/3 transition-all duration-300 ${showTaskForm ? 'block' : 'hidden lg:block'}`}>
+            <div className={`lg:w-1/3 mt-10 lg:mt-12 lg:sticky lg:top-6 self-start transition-all duration-300 ${showTaskForm ? 'block' : 'hidden lg:block'}`}>
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-[600px]">
                 {/* Form Header */}
                 <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-500 to-purple-600">
@@ -667,6 +666,6 @@ export default function Tasks() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

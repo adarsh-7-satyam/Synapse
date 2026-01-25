@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "@/components/Layout";
 import { 
   Bell, 
   Calendar, 
@@ -728,10 +727,13 @@ export default function Notices() {
 
   // Filter notices based on category and search
   const filteredNotices = sortedNotices.filter(notice => {
-    const matchesCategory = selectedCategory === "all" || 
-      (selectedCategory === "urgent" ? notice.priority === "urgent" : 
-       selectedCategory === "unread" ? !isNoticeRead(notice.id) :
-       notice.category === selectedCategory);
+   const matchesCategory =
+  selectedCategory === "all" ||
+  (selectedCategory === "urgent"
+    ? notice.priority === "urgent"
+    : selectedCategory === "unread"
+    ? !isNoticeRead(notice.id)
+    : notice.category.toLowerCase() === selectedCategory);
     
     const matchesSearch = notice.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       notice.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -773,7 +775,7 @@ export default function Notices() {
   };
 
   return (
-    <Layout>
+    <>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4 md:p-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -963,7 +965,7 @@ export default function Notices() {
             </div>
 
             {/* Right Column - Notice Details Sidebar */}
-            <div className="lg:w-1/3">
+            <div className="lg:w-1/3 lg:sticky lg:top-6 self-start">
               {selectedNotice ? (
                 <div className="h-[calc(100vh-2rem)] flex flex-col bg-white rounded-xl shadow-lg border border-gray-200">
                   {/* Sidebar Header */}
@@ -1158,6 +1160,6 @@ export default function Notices() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

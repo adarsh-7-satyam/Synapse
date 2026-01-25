@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { useState, useEffect } from "react";
 import { 
   BarChart3, 
@@ -242,7 +241,7 @@ export default function Grades() {
   };
 
   return (
-    <Layout>
+    <>
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -634,6 +633,6 @@ export default function Grades() {
         </div>
       </div>
     </div>
-    </Layout>
+    </>
   );
 }

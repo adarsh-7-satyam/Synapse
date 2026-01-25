@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -130,8 +129,10 @@ function FeatureCard({ feature }: { feature: Feature }) {
 
 export default function Index() {
   return (
-    <Layout>
+    <>
+    
       {/* Hero Section */}
+      
       <div className="mb-12">
         <div className="bg-gradient-to-br from-primary via-purple-600 to-secondary rounded-2xl p-12 text-white relative overflow-hidden">
           {/* Background Pattern */}
@@ -278,6 +279,6 @@ export default function Index() {
         <p>Built with modern technologies for the hackathon generation</p>
         <p className="mt-2">Synapse © 2024. Making campus administration simple.</p>
       </div>
-    </Layout>
+    </>
   );
 }

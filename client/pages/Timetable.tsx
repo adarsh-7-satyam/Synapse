@@ -1,4 +1,3 @@
-import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -201,7 +200,7 @@ export default function Timetable() {
   const [isAdminMode] = useState(false);
 
   return (
-    <Layout>
+    <>
       <div className="space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -325,6 +324,6 @@ export default function Timetable() {
           </Card>
         )}
       </div>
-    </Layout>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import { Search, BookOpen, X } from "lucide-react";
 import { useState } from "react";
-import Layout from "@/components/Layout";
+
 
 interface Course {
   code: string;
@@ -339,7 +339,7 @@ export default function Courses() {
   };
 
   return (
-    <Layout>
+    <>
       <div className="space-y-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -558,6 +558,6 @@ export default function Courses() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

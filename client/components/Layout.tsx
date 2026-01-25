@@ -1,4 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, Outlet } from "react-router-dom";
+// ... other imports ...
+
+
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import {
@@ -17,6 +20,8 @@ import {
   LogOut,
 } from "lucide-react";
 import { ReactNode } from "react";
+
+import { useAuth } from "../context/AuthContext"; // ADD THIS NEW LINE
 
 interface NavLink {
   label: string;
@@ -166,11 +171,15 @@ function NavigationContent() {
   );
 }
 
-interface LayoutProps {
-  children: ReactNode;
-}
 
-export default function Layout({ children }: LayoutProps) {
+
+export default function Layout() {
+    const { logout } = useAuth();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
   return (
     <div className="min-h-screen flex flex-col">
       {/* Top Navbar */}
@@ -188,11 +197,18 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center gap-4">
             {/* Profile and Logout Buttons - Hidden on mobile */}
             <div className="hidden lg:flex items-center gap-2">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <User size={18} />
-                <span>Profile</span>
-              </Button>
-              <Button variant="ghost" size="sm" className="gap-2">
+                           <Link to="/profile">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <User size={18} />
+                  <span>Profile</span>
+                </Button>
+              </Link>
+                            <Button 
+                variant="ghost" 
+                size="sm" 
+                className="gap-2"
+                onClick={handleLogout}
+              >
                 <LogOut size={18} />
                 <span>Logout</span>
               </Button>
@@ -216,11 +232,17 @@ export default function Layout({ children }: LayoutProps) {
                   <NavigationContent />
                   {/* Profile and Logout in Mobile Menu */}
                   <div className="border-t p-4 space-y-2">
-                    <Button variant="ghost" className="w-full justify-start gap-3">
-                      <User size={20} />
-                      <span>Profile</span>
-                    </Button>
-                    <Button variant="ghost" className="w-full justify-start gap-3">
+                                        <Link to="/profile">
+                      <Button variant="ghost" className="w-full justify-start gap-3">
+                        <User size={20} />
+                        <span>Profile</span>
+                      </Button>
+                    </Link>
+                                        <Button 
+                      variant="ghost" 
+                      className="w-full justify-start gap-3"
+                      onClick={handleLogout}
+                    >
                       <LogOut size={20} />
                       <span>Logout</span>
                     </Button>
@@ -240,7 +262,9 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Main Content */}
         <main className="flex-1 bg-gray-50">
-          <div className="container max-w-full px-4 py-6">{children}</div>
+         <div className="container max-w-full px-4 py-6">
+<Outlet />
+</div>
         </main>
       </div>
     </div>
