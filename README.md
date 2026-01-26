@@ -55,7 +55,7 @@ A **special focus of Synapse is the Medical & Mental Wellness section**, ensurin
 
 ### 🔵 Google Technologies
 - **Google Meet** – Video conferencing for medical consultations and mentoring  
-- **Google Gemini API** – Mental wellness test and emotional health analysis  
+-**Google Gemini API** – Mental wellness test and emotional health analysis (requires API key in `.env`)
 - **Google Maps API** – Navigation to nearby hospitals and medical stores  
 - **Google Chrome** – Development and testing  
 - **Google Fonts** – Typography  
@@ -80,9 +80,9 @@ A **special focus of Synapse is the Medical & Mental Wellness section**, ensurin
 
 ---
 
-### Step 1: Clone the Repository (Specific Branch)
+### Step 1: Clone the Repository 
 
-    git clone -b academic-calendar-ui https://github.com/ShlokDivyam1109/Synapse.git
+   git clone https://github.com/ShlokDivyam1109/Synapse.git
 
 ---
 
@@ -108,17 +108,35 @@ A **special focus of Synapse is the Medical & Mental Wellness section**, ensurin
 
 ---
 
-### Step 5: Open in Browser
+### Step 5: Set up Environment Variables
 
-If port 8080 is busy, Vite will automatically switch ports.
+Create a `.env` file in the root directory (same level as `package.json`) with the following content:
 
-Example:
+```env
+# Public variables
+VITE_PUBLIC_BUILDER_KEY=__BUILDER_PUBLIC_KEY__
+PING_MESSAGE="ping pong"
 
-    Local: http://localhost:8081/
+# Replace with your own Gemini API key
+GEMINI_API_KEY=your_gemini_api_key_here
 
-Open this in your browser:
 
-    http://localhost:8081/
+```
+
+Note: The .env file is excluded from Git (via .gitignore) for security. Get your Gemini API key from Google AI Studio.
+
+### Step 6: Open in Browser
+The development server will start on an available port (typically 5173, 3000, or 8080).
+
+Example URLs:
+
+http://localhost:5173/
+
+http://localhost:3000/
+
+http://localhost:8080/
+
+Check your terminal output for the exact local URL, then open it in your browser.
 
 ---
 
