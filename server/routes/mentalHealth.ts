@@ -11,9 +11,7 @@ const router = Router();
  */
 router.post("/mental-health", async (req, res) => {
   try {
-    const { data } = req.body.toString('utf8');
-    const answers_json = JSON.parse(data);
-    const { answers } = answers_json;
+    const { answers } = req.body;
     console.log(answers);
     if (!answers || !Array.isArray(answers)) {
       return res.status(400).json({ error: "Invalid answers payload" });
